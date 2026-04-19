@@ -31,16 +31,16 @@ int main(){
     int ww = 19*width*hh/(9*height); //char_ratio(19/9)*aspect_ratio*height
 
     
-   int xstep=width/ww;
-   int ystep=height/hh;
+   float xstep=width/(float)ww;
+   float ystep=height/(float)hh;
    char bg=-1, fg=-1;
    for (int y=0; y<hh; y++){
         for (int x=0; x<ww; x++){
             unsigned rr=0;
             unsigned gg=0;
             unsigned bb=0;
-            for (int i=0; i<xstep; i++){
-                for (int j=0; j<ystep; j++){
+            for (int i=0; i<(int)xstep; i++){
+                for (int j=0; j<(int)ystep; j++){
                     GetCol(img,x*xstep+i,y*ystep+j,&r,&g,&b);
                     rr+=r;
                     gg+=g;
